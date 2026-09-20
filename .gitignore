@@ -5,10 +5,6 @@
 # Cursor / editor
 .cursor/
 
-# Local-only / unused
-_unused/
-_site-upload/
-
 # Secrets & env
 .env
 .env.*

@@ -1,19 +1,29 @@
+Primary: this branch static HTML
+Secondary: branch wordpress
+
 # Karkia Tarabar Asia — Landing Page
+# کارکیا ترابر آسیا — صفحه فرود
 
-Private repository for the Karkia Tarabar Asia marketing landing page (static HTML).
+**Primary / اصلی:** this branch (`main`) is the static HTML landing.  
+**Secondary / ثانویه:** branch `wordpress` holds the WordPress package.
 
-**Site:** https://www.karkiatarabar.com/
+**Site / سایت:** https://www.karkiatarabar.com/
 
-## Layout
+Private repository / مخزن خصوصی.
+
+## English
+
+This branch is the live marketing site as static HTML (`index.html`, assets, SEO files). Do not treat the `wordpress` branch as the primary site.
+
+## فارسی
+
+این شاخه (`main`) لندینگ استاتیک HTML است و نسخهٔ اصلی سایت محسوب می‌شود. شاخهٔ `wordpress` بستهٔ وردپرس است و نسخهٔ ثانویه است.
+
+## Layout / ساختار (main)
 
 ```text
 index.html, .htaccess, robots.txt, sitemap.xml
 assets/
-  fonts/
-  images/qr/
-  vendor/fontawesome/
-  vendor/*.js
-  logo.png, favicon*.png, hero.jpg, hero.mp4
-_site-upload/   # server-upload snapshot (same public site files)
-_unused/        # one leftover image, not used by the live page
+_site-upload/   # historical server-upload snapshot
+_unused/        # leftover image, not used by the live page
 ```

@@ -1,12 +1,14 @@
+This branch is secondary; primary site is HTML on main.
+
 # Karkia Tarabar Asia — WordPress Host Package
 
 بسته وردپرس لندینگ کارکیا ترابر آسیا برای نصب روی هاست.
 
 WordPress host package for the Karkia Tarabar Asia landing page.
 
-This branch contains **WordPress only**. The static HTML site lives on the `static` branch.
+This branch is secondary. The primary site is the static HTML landing on `main`.
 
-این شاخه فقط وردپرس است. لندینگ HTML روی شاخه `static` است.
+این شاخه ثانویه است. سایت اصلی، لندینگ HTML روی شاخه `main` است.
 
 ## What to upload / چه چیزی را آپلود کنید
 

@@ -1,0 +1,22 @@
+name: Task
+description: Site, copy, or host-package work
+title: "[Task] "
+labels: []
+body:
+  - type: dropdown
+    id: branch
+    attributes:
+      label: Related branch
+      options:
+        - static
+        - wordpress
+        - main (hub)
+    validations:
+      required: true
+  - type: textarea
+    id: summary
+    attributes:
+      label: Summary
+      description: What needs to change
+    validations:
+      required: true

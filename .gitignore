@@ -1,0 +1,9 @@
+.DS_Store
+**/.DS_Store
+*.zip
+wordpress/wp-config.php
+wordpress/wp-content/uploads/
+wordpress/wp-content/upgrade/
+wordpress/wp-content/cache/
+.env
+.env.*

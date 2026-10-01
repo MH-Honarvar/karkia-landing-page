@@ -1,0 +1,17 @@
+/*
+Theme Name: Karkia Tarabar Asia
+Theme URI: https://www.karkiatarabar.com/
+Author: Mohammad Honarvar
+Author URI: https://www.karkiatarabar.com/
+Description: بسته تم لندینگ کارکیا ترابر آسیا — صفحه اصلی کامل با فرم استعلام، نقشه مسیرها، و پشتیبانی فارسی/انگلیسی/روسی.
+Version: 1.0.1
+Requires at least: 6.0
+Tested up to: 6.8
+Requires PHP: 7.4
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: karkia-tarabar
+Tags: rtl-language-support, custom-logo, one-column, featured-images
+*/
+
+/* Main styles live in css/theme.css and are enqueued from functions.php. */

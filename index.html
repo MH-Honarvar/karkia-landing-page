@@ -1621,6 +1621,20 @@
             .chat-box { width: calc(100vw - 24px); left: 12px; bottom: 130px; }
             html[lang="en"] .chat-box, html[lang="ru"] .chat-box { right: 12px; }
         }
+
+        ::view-transition-old(root),
+        ::view-transition-new(root) { animation-duration: 420ms; animation-timing-function: ease; animation-fill-mode: both; }
+        html.lang-to-ltr::view-transition-old(root) { animation-name: lang-out-right; }
+        html.lang-to-ltr::view-transition-new(root) { animation-name: lang-in-left; }
+        html.lang-to-rtl::view-transition-old(root) { animation-name: lang-out-left; }
+        html.lang-to-rtl::view-transition-new(root) { animation-name: lang-in-right; }
+        @keyframes lang-out-right { to { opacity: 0; transform: translateX(36px); } }
+        @keyframes lang-in-left { from { opacity: 0; transform: translateX(-36px); } }
+        @keyframes lang-out-left { to { opacity: 0; transform: translateX(-36px); } }
+        @keyframes lang-in-right { from { opacity: 0; transform: translateX(36px); } }
+        @media (prefers-reduced-motion: reduce) {
+            ::view-transition-old(root), ::view-transition-new(root) { animation: none; }
+        }
     </style>
 </head>
 <body>
@@ -3802,6 +3816,21 @@
         }
 
         function setLanguage(lang, isUserAction = true) {
+            const htmlTag = document.documentElement;
+            const apply = () => applyLanguage(lang, isUserAction);
+            const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+            if (isUserAction && !reduceMotion && typeof document.startViewTransition === 'function') {
+                htmlTag.classList.remove('lang-to-ltr', 'lang-to-rtl');
+                htmlTag.classList.add(lang === 'fa' ? 'lang-to-rtl' : 'lang-to-ltr');
+                document.startViewTransition(apply).finished.finally(() => {
+                    htmlTag.classList.remove('lang-to-ltr', 'lang-to-rtl');
+                });
+                return;
+            }
+            apply();
+        }
+
+        function applyLanguage(lang, isUserAction) {
             const htmlTag = document.documentElement;
             htmlTag.setAttribute('lang', lang);
             htmlTag.setAttribute('dir', lang === 'fa' ? 'rtl' : 'ltr');
